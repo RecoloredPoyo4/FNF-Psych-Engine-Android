@@ -1306,7 +1306,7 @@ class CharacterEditorState extends MusicBeatState
                         sys.io.File.saveContent(Main.getDataPath() + "mods/characters/yourchar" + ".json", data.trim());   
                         android.AndroidTools.toast("File Saved Successfully!!");
                         if (AndroidTools.getSDKversion() > 23 || AndroidTools.getSDKversion() == 23) {
-                        	Application.current.window.alert("Character Saved Successfully!! It should be named yourchar.json in the mods/characters folder + "\n" + "Press OK To Continue");
+                        	Application.current.window.alert("Character Saved Successfully!! It should be named yourchar.json in the mods/characters folder" + "\n" + "Press OK To Continue");
                        }
                         #else
 			_file = new FileReference();
