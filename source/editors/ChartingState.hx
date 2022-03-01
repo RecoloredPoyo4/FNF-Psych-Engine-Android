@@ -2653,8 +2653,11 @@ class ChartingState extends MusicBeatState
 		if ((data != null) && (data.length > 0))
 		{
 			#if android
-                        sys.io.File.saveContent(Main.getDataPath() + Paths.formatToSongPath(_song.song) + ".json", data.trim());
+                        sys.io.File.saveContent(Main.getDataPath() + "mods/data/" + Paths.formatToSongPath(_song.song) + "/" + Paths.formatToSongPath(_song.song) + ".json", data.trim());
                         android.AndroidTools.toast("File Saved Successfully!!");
+                        if (AndroidTools.getSDKversion() > 23 || AndroidTools.getSDKversion() == 23) {
+                        	Application.current.window.alert("Chart Saved Successfully!! It should be in the mods/data folder" + "\n" + "Press OK To Continue");
+                       }
                         #else
 			_file = new FileReference();
 			_file.addEventListener(Event.COMPLETE, onSaveComplete);
